@@ -1,0 +1,21 @@
+{
+    "name": "cyntelli-dev/php-sort",
+    "description": "PHP Sort Algorithm.",
+    "type": "library",
+    "license": "Cyntelli",
+    "authors": [
+        {
+            "name": "Leo Wang",
+            "email": "leo.wang@adgeek.com.tw"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Cyntelli\\Sort\\": "src/"
+        }
+    }
+}
