@@ -57,7 +57,7 @@ class MergeSort
         $origDatasetMaps = [];
 
         foreach ($dataset as $rowData) {
-            if (empty($rowData[$sortField])) {
+            if (!isset($rowData[$sortField])) {
                 throw new Exception("Not found $sortField field, please check dataset content.", 400);
             }
 
