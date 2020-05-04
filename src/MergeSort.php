@@ -61,6 +61,10 @@ class MergeSort
                 throw new Exception("Not found $sortField field, please check dataset content.", 400);
             }
 
+            if ($rowData[$sortField] == 0) {
+                continue;
+            }
+
             $fieldValue = $rowData[$sortField];
 
             // process list
