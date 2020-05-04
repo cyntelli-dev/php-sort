@@ -2,7 +2,7 @@
     "name": "cyntelli-dev/php-sort",
     "description": "PHP Sort Algorithm.",
     "type": "library",
-    "license": "Cyntelli",
+    "license": "Apache License 2.0",
     "authors": [
         {
             "name": "Leo Wang",
