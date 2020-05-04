@@ -83,6 +83,7 @@ class MergeSort
         if (!empty($fieldList)) {
             /** sort list */
             $sortList = $this->mergeRec($fieldList);
+            $sortList = array_unique($sortList);
 
             /** regroup */
             $sortDataset = [];
