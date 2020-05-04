@@ -80,26 +80,28 @@ class MergeSort
             $origDatasetMaps[$fieldValue][] = $hash;
         }
 
-        /** sort list */
-        $sortList = $this->mergeRec($fieldList);
+        if (!empty($fieldList)) {
+            /** sort list */
+            $sortList = $this->mergeRec($fieldList);
 
-        /** regroup */
-        $sortDataset = [];
-        foreach ($sortList as $value) {
-            $origins = $origDatasetMaps[$value];
+            /** regroup */
+            $sortDataset = [];
+            foreach ($sortList as $value) {
+                $origins = $origDatasetMaps[$value];
 
-            foreach ($origins as $origin) {
-                $sortDataset[] = unserialize(base64_decode($origin));
+                foreach ($origins as $origin) {
+                    $sortDataset[] = unserialize(base64_decode($origin));
+                }
             }
-        }
 
-        /** sort */
-        if ($sort == 'DESC') {
-            while ($rowData = array_pop($sortDataset)) {
-                $result[] = $rowData;
+            /** sort */
+            if ($sort == 'DESC') {
+                while ($rowData = array_pop($sortDataset)) {
+                    $result[] = $rowData;
+                }
+            } else {
+                $result = $sortDataset;
             }
-        } else {
-            $result = $sortDataset;
         }
 
         return $result;
